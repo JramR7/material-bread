@@ -56,7 +56,6 @@ class ButtonBase extends Component {
       typeTextColor,
       theme,
       hideLabel,
-      dense,
       useInputCasing,
     } = this.props;
 
@@ -68,8 +67,6 @@ class ButtonBase extends Component {
           theme.buttonText,
           {
             color: typeTextColor,
-            fontSize: dense ? 13 : theme.buttonText.fontSize,
-            letterSpacing: dense ? 0.3 : theme.buttonText.letterSpacing,
           },
           textStyle,
         ]}>
@@ -78,7 +75,7 @@ class ButtonBase extends Component {
     );
   }
   _renderLoader() {
-    const { loading, typeTextColor, hideLabel, dense } = this.props;
+    const { loading, typeTextColor, hideLabel } = this.props;
 
     if (!loading) return null;
     return (
@@ -86,7 +83,7 @@ class ButtonBase extends Component {
         size="small"
         color={typeTextColor}
         style={{
-          width: dense ? 12 : 16,
+          width: 18,
           flexDirection: 'row',
           alignItems: 'center',
           alignSelf: 'center',
@@ -97,14 +94,7 @@ class ButtonBase extends Component {
     );
   }
   _renderIcon() {
-    const {
-      icon,
-      iconPosition,
-      iconSize,
-      typeTextColor,
-      loading,
-      dense,
-    } = this.props;
+    const { icon, iconPosition, iconSize, typeTextColor, loading } = this.props;
     if (loading) {
       return this._renderLoader();
     }
@@ -114,7 +104,7 @@ class ButtonBase extends Component {
           marginRight: iconPosition == 'left' ? 8 : 0,
           marginLeft: iconPosition == 'right' ? 8 : 0,
         },
-        size: iconSize || (dense ? 14 : 18),
+        size: iconSize || 18,
         color: typeTextColor ? typeTextColor : 'white',
       });
     }
