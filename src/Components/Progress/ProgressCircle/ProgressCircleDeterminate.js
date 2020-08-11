@@ -69,7 +69,7 @@ class ProgressCircleDeterminate extends Component {
 
   getHalfCircleContainerStyle() {
     return {
-      width: this.props.size / 2,
+      width: this.props.size / 2.01,
       height: this.props.size,
       overflow: 'hidden',
     };
@@ -115,7 +115,7 @@ class ProgressCircleDeterminate extends Component {
         pointerEvents="none"
         style={[
           this.getHalfCircleContainerStyle(),
-          { transform: [{ scaleX: isFlipped ? -1.02 : 1.02 }] },
+          { transform: [{ scaleX: isFlipped ? -1 : 1 }] },
         ]}>
         <Animated.View
           useNativeDriver={false}
