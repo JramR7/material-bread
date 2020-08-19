@@ -201,6 +201,7 @@ class ListItem extends Component {
           disabled={disabled}
           rippleColor={'rgba(0,0,0,.8)'}
           onPress={() => this.setState({ isPressed: true })}
+          onLongPress={() => this.setState({ isPressed: true })}
           style={[
             {
               backgroundColor: this.getBackgroundColor(),

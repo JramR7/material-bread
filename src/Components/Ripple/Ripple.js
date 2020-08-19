@@ -211,7 +211,7 @@ export default class Ripple extends PureComponent {
 
     const animation = Animated.timing(ripple.progress, {
       toValue: 1,
-      easing: Easing.elastic(),
+      easing: Easing.out(Easing.ease),
       duration: rippleDuration,
       useNativeDriver: true,
     });
