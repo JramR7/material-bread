@@ -105,7 +105,7 @@ export default class Ripple extends PureComponent {
     let { onLongPress, disabled } = this.props;
     if (disabled) return;
     if ('function' === typeof onLongPress) {
-      () => onLongPress(event);
+      requestAnimationFrame(() => onLongPress(event));
     }
 
     this.startRipple(event);
@@ -211,7 +211,7 @@ export default class Ripple extends PureComponent {
 
     const animation = Animated.timing(ripple.progress, {
       toValue: 1,
-      easing: Easing.out(Easing.ease),
+      easing: Easing.elastic(),
       duration: rippleDuration,
       useNativeDriver: true,
     });
