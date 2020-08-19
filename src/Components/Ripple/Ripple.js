@@ -105,7 +105,7 @@ export default class Ripple extends PureComponent {
     let { onLongPress, disabled } = this.props;
     if (disabled) return;
     if ('function' === typeof onLongPress) {
-      requestAnimationFrame(() => onLongPress(event));
+      () => onLongPress(event);
     }
 
     this.startRipple(event);
